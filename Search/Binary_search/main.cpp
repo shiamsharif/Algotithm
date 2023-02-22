@@ -1,54 +1,53 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int BinarySearch(int a[],int beg, int end, int find)
+int BinarySearch(int a[], int beg, int end, int find)
 {
-    int mid;
-    if(end>=beg)
-    {
-        mid = (beg+end)/2;
+  int mid;
+  if (end >= beg)
+  {
+    mid = (beg + end) / 2;
 
-        if(a[mid]==find)
-        {
-            return mid+1;
-        }
-        else if (a[mid]<find)
-        {
-            return BinarySearch(a,mid+1,end,find);
-        }
-        else
-        {
-            return BinarySearch(a,beg,mid-1,find);
-        }
+    if (a[mid] == find)
+    {
+      return mid + 1;
     }
-return -1;
+    else if (a[mid] < find)
+    {
+      return BinarySearch(a, mid + 1, end, find);
+    }
+    else
+    {
+      return BinarySearch(a, beg, mid - 1, find);
+    }
+  }
+  return -1;
 }
 
 int main()
 {
-    int a[]={10,20,30,40,50,60,70,80,90};
-    int n = sizeof(a)/sizeof(a[0]);
-    cout<<"The element is : ";
-    for(int i = 0; i<n; i++)
-    {
-        cout<<a[i]<<"  ";
-    }
-    cout<<endl;
-    int find;
-    cin>>find;
-    int result = BinarySearch(a,0,n,find);
+  int a[] = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+  int n = sizeof(a) / sizeof(a[0]);
+  cout << "The element is : ";
+  for (int i = 0; i < n; i++)
+  {
+    cout << a[i] << "  ";
+  }
+  cout << endl;
+  int find;
+  cin >> find;
+  int result = BinarySearch(a, 0, n, find);
 
-    if(result == -1)
-    {
-        cout<<"Not Found.!\n";
-    }
-    else
-    {
-        cout<<"Found the element at "<<result<<" possion is Array.\n";
-    }
+  if (result == -1)
+  {
+    cout << "Not Found.!\n";
+  }
+  else
+  {
+    cout << "Found the element at " << result << " possion is Array.\n";
+  }
 
-    return 0;
-    
+  return 0;
 }
 
 /*
@@ -66,7 +65,7 @@ SPACE COMPLEXITY: o(1);
 using namespace std;
 
 int binarySearch(int array[], int x, int low, int high) {
-  while (low <= high) 
+  while (low <= high)
   {
     int mid = (low + high) / 2;
 
